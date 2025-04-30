@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding RSVP</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Aria &amp; Orion</h1>
+      <p>September 21, 2025</p>
+      <p>Welcome to our wedding!</p>
+    </div>
+  </header>
+
+  <section id="details" class="details">
+    <h2>Event Details</h2>
+    <ul>
+      <li><strong>Venue:</strong> The Enchanted Garden, Redwood Park</li>
+      <li><strong>Date &amp; Time:</strong> September 21, 2025 at 4:00 PM</li>
+      <li><strong>Dress Code:</strong> Formal, enchanted theme</li>
+    </ul>
+  </section>
+
+  <section id="rsvp">
+    <h2>RSVP</h2>
+    <form id="rsvpForm">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="attendees">Number of Guests:</label>
+      <input type="number" id="attendees" name="attendees" min="1" required />
+
+      <label for="meal">Meal Preference:</label>
+      <select id="meal" name="meal">
+        <option value="">-- Please select --</option>
+        <option>Chicken</option>
+        <option>Beef</option>
+        <option>Vegetarian</option>
+      </select>
+
+      <button type="submit">Submit RSVP</button>
+    </form>
+  </section>
+
+  <section class="gallery-section">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="images/temple-hall.jpg" alt="Mystical temple interior">
+      <img src="images/forest-lush.jpg" alt="Sunlit enchanted forest">
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+      const name = document.getElementById('name').value.trim();
+      const attendees = document.getElementById('attendees').value;
+      if (!name || attendees < 1) {
+        alert('Please fill out all required fields.');
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
